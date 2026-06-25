@@ -1,0 +1,92 @@
+SELECT * FROM sales_data LIMIT 5;
+
+-- Category Profitability Analysis
+-- Which categories generate the highest total revenue? 
+-- This helps in focusing marketing efforts.
+
+SELECT 
+    "Category",
+    ROUND(SUM("TotalRevenue"::NUMERIC), 2) AS total_revenue
+FROM sales_data
+GROUP BY "Category"
+ORDER BY total_revenue DESC;
+
+-- Customer Behavior (Average Ticket)
+-- What is the average spending per customer?
+-- This helps in understanding the value of the user base.
+
+SELECT 
+    "CustomerID",
+    ROUND(AVG("TotalRevenue"::NUMERIC), 2) AS avg_customer_spend 
+FROM sales_data
+GROUP BY "CustomerID"
+ORDER BY avg_customer_spend DESC;
+
+-- Supply Chain Optimization
+-- Which shipment providers have the highest average shipping costs?
+
+SELECT 
+    "ShipmentProvider",
+    ROUND(AVG("ShippingCost"::NUMERIC), 2) as avg_shipping_cost
+FROM sales_data
+GROUP BY "ShipmentProvider"
+ORDER BY avg_shipping_cost DESC;
+
+-- Order Priority Analysis
+-- Is there a difference in average shipping costs based on OrderPriority?
+-- This may reveal if "High" priority orders are more costly to process.
+
+SELECT 
+    "OrderPriority",
+    ROUND(AVG("ShippingCost"::NUMERIC), 2) AS avg_shipping_cost
+FROM sales_data
+GROUP BY "OrderPriority"
+ORDER BY avg_shipping_cost DESC;
+
+-- Time-Series Trend Analysis
+-- What is the total revenue generated for each month of activity?
+
+SELECT
+    DATE_TRUNC('month', "InvoiceDate") as month_trunc,
+    ROUND(SUM("TotalRevenue"::NUMERIC), 2) as monthly_revenue
+FROM sales_data
+GROUP BY month_trunc
+ORDER BY month_trunc DESC;
+
+-- Advanced Filtering: High-Value Customers
+-- Get the ID of customers who have made at least 5 purchases
+-- and have an average purchase spend greater than 500 currency units.
+
+SELECT
+    "CustomerID",
+    COUNT(*) AS total_purchases,
+    ROUND(AVG("TotalRevenue"::NUMERIC), 2) AS avg_spend
+FROM sales_data
+GROUP BY "CustomerID"
+HAVING COUNT(*) >= 5 AND AVG("TotalRevenue") > 500
+ORDER BY avg_spend DESC;
+
+-- Churn/Returns Analysis
+-- Which product category has the highest return rate?
+-- (i.e., what percentage of sales are marked as "Returned"?).
+
+SELECT
+    "Category",
+    ROUND(SUM(CASE
+        WHEN "ReturnStatus" = 'Returned' THEN 1
+        ELSE 0
+    END)::NUMERIC / COUNT(*) * 100, 2) AS returned_status
+FROM sales_data
+GROUP BY "Category"
+ORDER BY returned_status DESC;
+
+-- Shipping Cost vs. Return Status
+-- What is the average shipping cost for orders that were "Returned"
+-- compared to those that were "Not Returned"?
+
+SELECT
+    "ReturnStatus",
+    ROUND(AVG("ShippingCost"::NUMERIC), 2) AS avg_shipping_cost
+FROM sales_data
+GROUP BY "ReturnStatus"
+ORDER BY avg_shipping_cost;
