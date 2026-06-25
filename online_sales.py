@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 def clean_dataset(file_path):
 
-    df = pd.read_csv('online_sales_dataset.csv')
+    df = pd.read_csv(file_path)
 
     #print(df.head())
     #print(df.info())
