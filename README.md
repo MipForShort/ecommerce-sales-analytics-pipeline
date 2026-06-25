@@ -72,6 +72,7 @@ The analytical logic was developed to extract actionable business intelligence f
 - Time-Series Analysis: Tracking monthly revenue trends using date truncation techniques to identify growth patterns.
 - Advanced Customer Segmentation: Implementing filtering logic (HAVING clause) to identify high-value, repeat-purchase customers.
 - Logistics & Churn Analysis: Calculating return rates by category and comparing shipping costs against return status to mitigate financial leakage.
+- Geographic and Operational Insights: Tracking order volume by region and evaluating the performance of various payment and shipping methods to support strategic logistical and financial planning.
 
 *For detailed SQL syntax and implementation, please refer to the sql/query.sql file*
 
