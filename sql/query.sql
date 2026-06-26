@@ -53,7 +53,8 @@ GROUP BY "CustomerID"
 HAVING COUNT(*) >= 5 AND AVG("TotalRevenue") > 500
 ORDER BY avg_spend DESC;
 
--- Top 3 most purchased products withing each category
+-- Top 3 most purchased products within each category
+-- Identifies the best-selling items per category using window functions.
 
 WITH item_count AS (
     SELECT
@@ -71,7 +72,6 @@ SELECT
     total_orders
 FROM item_count
 WHERE item_rank <= 3;
-
 
 -- ==================================================
 -- 3. LOGISTICS & OPERATIONAL EFFICIENCY
