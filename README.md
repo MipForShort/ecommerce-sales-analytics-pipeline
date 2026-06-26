@@ -74,7 +74,8 @@ The analytical logic was developed to extract actionable business intelligence f
 - Logistics & Churn Analysis: Calculating return rates by category and comparing shipping costs against return status to mitigate financial leakage.
 - Geographic and Operational Insights: Tracking order volume by region and evaluating the performance of various payment and shipping methods to support strategic logistical and financial planning.
 
-*For detailed SQL syntax and implementation, please refer to the sql/query.sql file*
+You can find the detailed analysis report with visual results here:
+[View Detailed Performance Report](e-commerce-sales-performance-report.md)
 
 ---
 
