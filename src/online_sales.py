@@ -3,6 +3,8 @@ from sqlalchemy import create_engine
 import os
 from dotenv import load_dotenv
 
+load_dotenv(encoding='utf-8')
+
 def clean_dataset(file_path):
 
     df = pd.read_csv(file_path)
@@ -50,6 +52,8 @@ def get_db_engine():
     host = os.getenv('DB_HOST')
     port = os.getenv('DB_PORT')
     db = os.getenv('DB_NAME')
+
+    print(f"User: {user}, Port: {port}")
 
     # Return the engine
     return create_engine(f'postgresql+psycopg2://{user}:{password}@{host}:{port}/{db}')
