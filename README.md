@@ -77,6 +77,9 @@ The analytical logic was developed to extract actionable business intelligence f
 You can find the detailed analysis report with visual results here:
 [View Detailed Performance Report](./docs/e-commerce-sales-performance-report.md)
 
+You can also find a presentation for the report here:
+[Vie Presentation](./docs/E-Commerce-Sales-Performance-Report.pdf)
+
 ---
 
 *Developed as a portfolio project to demonstrate capabilities in Data Engineering and Data Analysis.*
