@@ -75,7 +75,7 @@ The analytical logic was developed to extract actionable business intelligence f
 - Geographic and Operational Insights: Tracking order volume by region and evaluating the performance of various payment and shipping methods to support strategic logistical and financial planning.
 
 You can find the detailed analysis report with visual results here:
-[View Detailed Performance Report](e-commerce-sales-performance-report.md)
+[View Detailed Performance Report](./docs/e-commerce-sales-performance-report.md)
 
 ---
 
