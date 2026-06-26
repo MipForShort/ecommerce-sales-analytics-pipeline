@@ -53,6 +53,26 @@ GROUP BY "CustomerID"
 HAVING COUNT(*) >= 5 AND AVG("TotalRevenue") > 500
 ORDER BY avg_spend DESC;
 
+-- Top 3 most purchased products withing each category
+
+WITH item_count AS (
+    SELECT
+        "Category",
+        "Description",
+        COUNT("CustomerID") as total_orders,
+        ROW_NUMBER() OVER(PARTITION BY "Category" ORDER BY COUNT("CustomerID") DESC) AS item_rank
+    FROM sales_data
+    GROUP BY "Category", "Description"
+)
+SELECT
+    item_rank,
+    "Category",
+    "Description",
+    total_orders
+FROM item_count
+WHERE item_rank <= 3;
+
+
 -- ==================================================
 -- 3. LOGISTICS & OPERATIONAL EFFICIENCY
 -- ==================================================
