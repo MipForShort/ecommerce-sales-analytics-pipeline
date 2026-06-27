@@ -98,11 +98,20 @@ Our analysis was divided into four core areas to provide a 360-degree view of th
 
 [← Back to Repository](../README.md)
 
-## 5. Dashboard
+## 5. Dashboard (KPI Visualization)
 
-- Status: In Development.
-- Goal: Visualize the KPIs identified in the SQL analysis (specifically focusing on Revenue by Month, Category Return Rates, and Geographic distribution).
-- Planned Technology: PowerBI
+I have developed an interactive Power BI dashboard to transform processed data into strategic insights.
+
+### Dashboard View
+
+![E-Commerce Dashboard](../img/dashboard.png)
+
+### Key Insights:
+- **Behavioral Analysis:** I identified payment method preferences segmented by customer value (High Value vs. Standard).
+- **Operational Health:** Real-time monitoring of revenue by country and temporal (monthly) trends.
+- **Logistics and Quality:** Visibility into provider distribution and return rates by product category.
+
+*Note: The dashboard was developed using Power BI Desktop and modeled using DAX for custom customer segmentation.*
 
 ## 6. Business Recommendations
 
