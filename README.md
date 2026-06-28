@@ -38,6 +38,7 @@ git clone https://github.com/MipForShort/ecommerce-sales-analytics-pipeline.git
 ```bash
 python -m venv .venv
 source .venv/bin/activate  # On Linux/macOS
+source .venv/Scripts/activate  # On Windows with Git Bash 
 ```
 
 3. Install dependencies:
@@ -57,10 +58,7 @@ DB_PORT=5432
 DB_NAME=sales_db
 ```
 
-5. Create the database
-Create the database from your terminal if using Linux/MacOS by executing `psql` first.
-
-Once done, create the database with the next command:
+5. Create the database from your terminal if using Linux/MacOS by executing `psql` first. Once done, create the database with the next command:
 
 ```sql
 CREATE DATABASE sales_db;
