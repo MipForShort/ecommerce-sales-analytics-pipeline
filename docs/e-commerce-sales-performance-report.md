@@ -13,6 +13,10 @@ The dataset includes transactional records covering:
 - Sales Metrics: Revenue, costs, and payment methods.
 - Operations: Shipment providers, priority levels, and return status.
 - Geographical Data: Country-level distribution of sales.
+- Rows: 49782
+- Columns: 17
+- Rows after cleaning: 44804
+- Columns after cleaning: 18
 
 ## 3. Exploratory Data Analysis (EDA) using Python
 

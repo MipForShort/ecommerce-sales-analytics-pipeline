@@ -57,7 +57,24 @@ DB_PORT=5432
 DB_NAME=sales_db
 ```
 
-5. Execute the pipeline:
+5. Create the database
+Create the database from your terminal if using Linux/MacOS by executing `psql` first.
+
+Once done, create the database with the next command:
+
+```sql
+CREATE DATABASE sales_db;
+```
+
+If using Windows:
+- Open pgAdmin
+- Expand Servers
+- Expand PostgreSQL
+- Right click on Databases
+- Hover Create, select Database
+- Name it sales_db
+
+6. Execute the pipeline:
 
 ```bash
 python src/online_sales.py
