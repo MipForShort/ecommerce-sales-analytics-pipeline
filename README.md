@@ -36,9 +36,18 @@ git clone https://github.com/MipForShort/ecommerce-sales-analytics-pipeline.git
 2. Create and activate a virtual environment:
 
 ```bash
+# Linux/macOS
+python3 -m venv .venv
+source .venv/bin/activate
+
+# Windows
+# PowerShell
 python -m venv .venv
-source .venv/bin/activate  # On Linux/macOS
-source .venv/Scripts/activate  # On Windows with Git Bash 
+.venv\Scripts\Activate.ps1
+
+# CMD
+python -m venv .venv
+.venv\Scripts\activate
 ```
 
 3. Install dependencies:
