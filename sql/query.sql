@@ -163,7 +163,7 @@ SELECT
     "ReturnStatus",
     ROUND(AVG("ShippingCost"::NUMERIC), 2) AS avg_shipping_cost
 FROM sales_data
-GROUP BY "ReturnStatus"
+GROUP BY "ReturnStatus";
 --ORDER BY avg_shipping_cost;
 
 SELECT * FROM vw_avg_shipping_cost_for_returned;
