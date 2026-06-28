@@ -16,7 +16,7 @@ The dataset includes transactional records covering:
 - Rows: 49782
 - Columns: 17
 - Rows after cleaning: 44804
-- Columns after cleaning: 18
+- Columns after cleaning: 19
 
 ## 3. Exploratory Data Analysis (EDA) using Python
 

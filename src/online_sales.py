@@ -36,6 +36,8 @@ def clean_dataset(file_path):
 
     # Format InvoiceDate to date data type
     df['InvoiceDate'] = pd.to_datetime(df['InvoiceDate'])
+    df['Time'] = df['InvoiceDate'].dt.time
+    df['InvoiceDate'] = df['InvoiceDate'].dt.date
     print("Converted 'InvoiceDate' to datetime")
 
     # Typos
@@ -105,5 +107,7 @@ def load_into_sql(df, engine):
 
 if __name__ == "__main__":
     clean_df = clean_dataset('online_sales_dataset.csv')
-    engine = get_db_engine()
-    load_into_sql(clean_df, engine)
+    clean_df.to_csv('cleaned_online_sales_dataset.csv', index=False)
+
+    #engine = get_db_engine()
+    #load_into_sql(clean_df, engine)
