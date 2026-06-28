@@ -84,7 +84,11 @@ If using Windows:
 6. Execute the pipeline:
 
 ```bash
-python src/online_sales.py
+# Linux/macOS
+python3 src/online_sales.py
+
+# Windows
+python .\src\online_sales.py
 ```
 
 # SQL Analysis
